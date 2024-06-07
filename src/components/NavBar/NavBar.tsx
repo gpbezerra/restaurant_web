@@ -19,6 +19,7 @@ const links = [
 
 const NavBar = () => {
     const pathname = usePathname();
+    console.log(process.env.NEXT_PUBLIC_FIREBASE_API_KEY)
     return(
         <div className="fixed bottom-0 w-full h-18 pt-2  bg-white border-t border-gray-200 flex justify-evenly">
            {links.map((link) => {
