@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+// import { getAnalytics } from "firebase/analytics";
+// import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -15,8 +15,8 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app)
-const analytics = app.name &&typeof window == "undefined" ? getAnalytics(app) : null;
 const db = getFirestore(app);
+// const auth = getAuth(app)
+// const analytics = app.name &&typeof window == "undefined" ? getAnalytics(app) : null;
 
-export {app, auth, analytics, db};
+export {app, db};

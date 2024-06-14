@@ -8,3 +8,5 @@ Funcionalidades
 - Listagem de Pratos: Visualize todos os pratos cadastrados de forma organizada.
 - Detalhes do Prato: Obtenha informações completas sobre cada prato em uma visualização única.
 - Pedidos inteligentes: O sistema irá assegurar que os clientes não peçam mais pratos do que o disponível em estoque.
+
+

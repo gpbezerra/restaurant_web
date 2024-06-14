@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import "./navbar.css";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";

@@ -1,6 +1,7 @@
 /node_modules
 /.next/
 .env
+.firebase
 .firebaserc
 firebase.json
 firestore.indexes.json

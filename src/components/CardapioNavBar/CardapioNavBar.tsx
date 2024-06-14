@@ -1,6 +1,5 @@
 "use server";
 
-
 const cardapios = ["Menu fit", "Menu light", "Promoção"];
 
 const CardapioNavBar = () => {
