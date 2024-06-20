@@ -19,14 +19,32 @@ const initialState = {
 }
 
 import { useFormState } from "react-dom";
-import { addItem } from "./actions";
+import { addItem, getData } from "./actions";
+import { useEffect, useState } from "react";
 
 
 const Admin = () => {
   const [state, formAction] = useFormState(addItem, initialState)
+  const [data, setData ] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getData();
+      setData(data);
+    }
+    fetchData()
+  }, [])
+
   return (
     <main>
         Adicionar Item
+        <br />
+        {data.map((item: any) => {
+          return(
+            <p>{item.nome}</p>
+          )
+        })}
+
       <form action={formAction}>
         <input required type="text" name="nome" placeholder="Nome"/>
         <input required type="text" name="desc" placeholder="descricao"/>

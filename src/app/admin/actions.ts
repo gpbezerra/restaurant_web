@@ -21,9 +21,17 @@ import { z } from "zod";
 import { addDoc, collection, doc, getDocs, setDoc } from "firebase/firestore"; 
 import {db} from "../../lib/firebase/config.js";
 
+export async function getData(): any {
+  const query = await getDocs(collection(db, "items"))
+  const data: any = [];
+  query.forEach((doc) => {
+    data.push({id: doc.id, ...doc.data()});
+  })
+  return data;
+}
 
 export async function addItem(prevState: any, formData: FormData){
-  console.log(formData)
+  // console.log(formData)
     try{
       await addDoc(collection(db, "items"), {
         nome: formData.get("nome"),
